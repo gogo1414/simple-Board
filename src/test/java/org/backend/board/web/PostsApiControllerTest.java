@@ -75,6 +75,8 @@ public class PostsApiControllerTest {
         String content = "Test Start";
         String author = "Test@test.com";
 
+        System.out.println("안녕하세요.");
+
         Posts posts = postsRepository.save(Posts.builder()
                 .author(author)
                 .title(title)
