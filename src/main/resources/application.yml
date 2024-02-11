@@ -1,0 +1,7 @@
+spring:
+  jpa:
+    hibernate: # hibernate ?? ??
+      ddl-auto: create
+    properties: # property ?? ??
+      hibernate: # hibernate property ??
+        format_sql: true
