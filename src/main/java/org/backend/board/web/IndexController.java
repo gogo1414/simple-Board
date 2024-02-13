@@ -1,6 +1,10 @@
 package org.backend.board.web;
 
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.backend.board.config.oauth.LoginUser;
+import org.backend.board.config.oauth.dto.SessionMember;
 import org.backend.board.web.dto.PostsResponseDto;
 import org.backend.board.web.service.PostsService;
 import org.springframework.stereotype.Controller;
@@ -13,21 +17,22 @@ import org.springframework.web.bind.annotation.PathVariable;
 public class IndexController {
 
     private final PostsService postsService;
+    private final HttpSession httpSession;
 
-    @GetMapping(value = "/index")
-    public String index() {
+    @GetMapping(value = "/")
+    public String index(Model model, @LoginUser SessionMember member) {
+        model.addAttribute("posts", postsService.findAllDesc());
+
+        if(member != null) {
+            model.addAttribute("memberName", member.getName());
+        }
+
         return "index";
     }
 
     @GetMapping(value = "/posts/save")
     public String postsSave() {
         return "posts-save";
-    }
-
-    @GetMapping("/")
-    public String index(Model model) {
-        model.addAttribute("posts", postsService.findAllDesc());
-        return "index";
     }
 
     @GetMapping("/posts/update/{id}")

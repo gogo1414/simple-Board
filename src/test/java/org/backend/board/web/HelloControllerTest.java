@@ -3,6 +3,9 @@ package org.backend.board.web;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.data.jpa.mapping.JpaMetamodelMappingContext;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.util.LinkedMultiValueMap;
@@ -16,6 +19,7 @@ public class HelloControllerTest {
     @Autowired
     private MockMvc mvc;
 
+    @WithMockUser(roles = "MEMBER")
     @Test
     public void hello가_리턴된다() throws Exception {
 
@@ -26,6 +30,7 @@ public class HelloControllerTest {
                 .andExpect(content().string(hello));
     }
 
+    @WithMockUser(roles = "MEMBER")
     @Test
     public void helloDto가_리턴된다() throws Exception {
         String name = "test";
