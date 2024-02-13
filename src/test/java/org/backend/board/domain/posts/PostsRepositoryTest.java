@@ -63,7 +63,7 @@ public class PostsRepositoryTest {
         Posts post = postsList.get(0);
 
         //then
-        assertThat(post.getCreatedTime()).isAfter(now);
+        assertThat(post.getCreatedDate()).isAfter(now);
         assertThat(post.getContent()).isEqualTo("test");
 
     }

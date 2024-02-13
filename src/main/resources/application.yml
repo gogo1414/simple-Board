@@ -5,6 +5,8 @@ spring:
     properties: # property ?? ??
       hibernate: # hibernate property ??
         format_sql: true
+#        dialect: org.hibernate.dialect.MySQLDialect
+    show-sql: true
   h2:
     console:
       enabled: true
@@ -13,9 +15,11 @@ spring:
     username: sa
     password:
     driver-class-name: org.h2.Driver
+  profiles:
+    include: oauth
 
 server:
   servlet:
     encoding:
       charset: UTF-8
-      force-response: true
+      force-response: true # 이거 설정 안해서 계속 한글이 ???로 떴음

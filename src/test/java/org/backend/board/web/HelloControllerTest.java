@@ -10,7 +10,6 @@ import org.springframework.util.MultiValueMap;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-
 @WebMvcTest(controllers = HelloController.class)
 public class HelloControllerTest {
 
