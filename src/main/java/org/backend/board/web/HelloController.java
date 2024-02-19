@@ -1,5 +1,6 @@
 package org.backend.board.web;
 
+import lombok.extern.slf4j.Slf4j;
 import org.backend.board.web.dto.HelloResponseDto;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
