@@ -55,6 +55,9 @@ dependencies {
     // Lombok
     compileOnly 'org.projectlombok:lombok'
 
+    // mariaDB database
+    compileOnly 'org.mariadb.jdbc:mariadb-java-client'
+
     // H2 DataBase
     runtimeOnly 'com.h2database:h2'
 

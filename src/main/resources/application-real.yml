@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    include:
+      - oauth
+      - real-db
+
+  jpa:
+    properties:
+      hibernate:
+        dialect:
+
+  session:
+    store-type: jdbc
