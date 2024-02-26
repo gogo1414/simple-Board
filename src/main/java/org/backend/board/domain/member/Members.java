@@ -9,7 +9,7 @@ import org.backend.board.domain.BaseTimeEntity;
 @Getter
 @NoArgsConstructor
 @Entity
-public class Member extends BaseTimeEntity {
+public class Members extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,17 +29,17 @@ public class Member extends BaseTimeEntity {
     private Role role;
 
     @Builder
-    public Member(String name,
-                  String email,
-                  String picture,
-                  Role role) {
+    public Members(String name,
+                   String email,
+                   String picture,
+                   Role role) {
         this.name = name;
         this.email = email;
         this.picture = picture;
         this.role = role;
     }
 
-    public Member update(String name, String picture) {
+    public Members update(String name, String picture) {
         this.name = name;
         this.picture = picture;
         return this;

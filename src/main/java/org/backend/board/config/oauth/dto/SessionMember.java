@@ -1,7 +1,7 @@
 package org.backend.board.config.oauth.dto;
 
 import lombok.Getter;
-import org.backend.board.domain.member.Member;
+import org.backend.board.domain.member.Members;
 
 import java.io.Serializable;
 
@@ -12,9 +12,9 @@ public class SessionMember implements Serializable {
     private String email;
     private String picture;
 
-    public SessionMember(Member member) {
-        this.name = member.getName();
-        this.email = member.getEmail();
-        this.picture = member.getPicture();
+    public SessionMember(Members members) {
+        this.name = members.getName();
+        this.email = members.getEmail();
+        this.picture = members.getPicture();
     }
 }

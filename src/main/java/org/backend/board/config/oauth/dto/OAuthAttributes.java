@@ -2,7 +2,7 @@ package org.backend.board.config.oauth.dto;
 
 import lombok.Builder;
 import lombok.Getter;
-import org.backend.board.domain.member.Member;
+import org.backend.board.domain.member.Members;
 import org.backend.board.domain.member.Role;
 
 import java.util.Map;
@@ -62,8 +62,8 @@ public class OAuthAttributes {
                 .build();
     }
 
-    public Member toEntity() {
-        return Member.builder()
+    public Members toEntity() {
+        return Members.builder()
                 .name(name)
                 .email(email)
                 .picture(picture)
