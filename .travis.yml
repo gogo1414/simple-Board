@@ -15,7 +15,7 @@ cache:
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip r wnstn6945-springboot3-board *
+  - zip -r wnstn6945-springboot3-board *
   - mkdir -p deploy
   - mv wnstn6945-springboot3-board.zip deploy/wnstn6945-springboot3-board.zip
 
