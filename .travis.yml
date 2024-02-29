@@ -23,7 +23,7 @@ deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
     secret_access_key: $AWS_SECRET_KEY # ''
-    bucket: wnstn6945-springboot3-build # S3 버킷
+    bucket: wnstn6945-springboot3-board # S3 버킷
     region: ap-northeast-2
     skip_cleanup: true
     acl: private # zip 파일 접근을 private 방식으로
@@ -35,7 +35,7 @@ deploy:
   - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
     secret_access_key: $AWS_SECRET_KEY # ''
-    bucket: wnstn6945-springboot3-build # S3 버킷
+    bucket: wnstn6945-springboot3-board # S3 버킷
     key: wnstn6945-springboot3-board.zip # 빌드 파일을 압축해서 전달
     bundle_type: zip  # 압축 확장자
     application: wnstn6945-springboot3-board  # 웹 콘솔에서 등록한 CodeDeploy 애플리케이션
