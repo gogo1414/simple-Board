@@ -12,7 +12,7 @@ echo "> IDLE_PORT: $IDLE_PORT"
 echo "> curl -s http://localhost:$IDLE_PORT/profile"
 sleep 10
 
-for RETRY_COUNT in {1..10}
+for RETRY_COUNT in {1..20}
 do
   RESPONSE=$(curl -s http://localhost:${IDLE_PORT}/profile)
   UP_COUNT=$(echo ${RESPONSE} | grep 'real' | wc -l)
@@ -27,7 +27,7 @@ do
       echo "> Health check: ${RESPONSE}"
   fi
 
-  if [ ${RETRY_COUNT} -eq 10 ]
+  if [ ${RETRY_COUNT} -eq 20 ]
   then
     echo "> Health check 실패. "
     echo "> 엔진엑스에 연결하지 않고 배포를 종료합니다."
