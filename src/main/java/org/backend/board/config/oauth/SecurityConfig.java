@@ -52,7 +52,6 @@ public class SecurityConfig {
                 .oauth2Login(oauth2Login -> oauth2Login
                 .userInfoEndpoint(UserInfoEndpointConfig -> UserInfoEndpointConfig
                         .userService(customOAuth2UserService)));
-
         return http.build();
     }
 }
