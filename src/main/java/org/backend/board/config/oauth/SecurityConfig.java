@@ -26,7 +26,8 @@ public class SecurityConfig {
             "/images/**",
             "/js/**",
             "/swagger-ui/**",
-            "/h2-console/**"
+            "/h2-console/**",
+            "/profile"
     };
 
     private static final String[] AUTH_LIST = {
